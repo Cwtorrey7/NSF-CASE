@@ -1,0 +1,35 @@
+What was the primary method used by WannaCry to encrypt victims' data?
+    a) Phishing emails
+    b) USB drive infection
+    c) Exploiting the EternalBlue vulnerability
+    d) Website drive-by download
+
+What type of software was WannaCry?
+    a) Adware
+    b) Ransomware
+    c) Spyware
+    d) Antivirus
+
+What was the role of DoublePulsar in the WannaCry attack?
+    a) It was the decryption tool for victims
+    b) It acted as a firewall against antivirus software
+    c) It was used to spread phishing emails
+    d) It served as a backdoor for malware installation
+
+How was WannaCry's spread significantly reduced?
+    a) Activation of a hardcoded kill switch
+    b) A global antivirus update
+    c) Disconnecting infected computers from the internet
+    d) A worldwide system reboot
+
+What could have prevented the WannaCry infection?
+    a) Installing more antivirus software
+    b) Disabling SMBv1 and applying security patches
+    c) Changing network passwords frequently
+    d) Using only mobile devices and tablets
+
+What is the hidden flag after exploiting the vulnerable machine?
+    a) 35FW5x
+    b) 208cE7
+    c) 0T801j
+    d) u46U0o

