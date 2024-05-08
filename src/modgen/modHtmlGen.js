@@ -29,10 +29,10 @@ function modgen (modTitle, modNum, modIntroVideoLink, modOverviewFile, modVulner
     const filepath = path.join(directory, relativePath)
 
     // open new file using helper function generateHTML()
-    fs.writeFile(filepath+"module"+modNum+".html", generateHTML(modTitle, modNum, modIntroVideoLink, modOverviewFile, modVulnerabilityFile, modTermDescFile, modQuestionsFile), (err) => {
+    fs.writeFile(`${filepath}module${modNum}.html`, generateHTML(modTitle, modNum, modIntroVideoLink, modOverviewFile, modVulnerabilityFile, modTermDescFile, modQuestionsFile), (err) => {
         if (err) {
             console.error('Error writing to file: ', err)
-            return;
+            return
         }
     })
 }
@@ -40,22 +40,21 @@ function modgen (modTitle, modNum, modIntroVideoLink, modOverviewFile, modVulner
 function readLineByLine(filepath) {
     let lines = []
     try {
-        const data = fs.readFileSync(filepath,'utf8');
-        lines.push(...data.split('\n'));
-        return lines;
+        const data = fs.readFileSync(filepath,'utf8')
+        lines.push(...data.split('\n'))
+        return lines
     } catch (err) {
-        throw err;
+        throw err
     }
 }
 
 function printAnswerHelper(questionNum, answerLetter, questionAnswer) {
-    console.log(questionNum)
     let string = ''
-    string += '\t\t\t\t\t\t<div>\n';
-    string += `\t\t\t\t\t\t\t<input type=\"radio\" id=\"Q${questionNum}${answerLetter}\" name=\"singleChoiceAnswer${questionNum}\" value=\"${questionAnswer}\" style=\"display: none;\">\n`;
-    string += `\t\t\t\t\t\t\t<label class=\"radio-label\" for=\"Q${questionNum}${answerLetter}\">${questionAnswer}</label>\n`;
-    string += '\t\t\t\t\t\t</div>\n';
-    return string;
+    string += '\t\t\t\t\t\t<div>\n'
+    string += `\t\t\t\t\t\t\t<input type=\"radio\" id=\"Q${questionNum}${answerLetter}\" name=\"singleChoiceAnswer${questionNum}\" value=\"${questionAnswer}\" style=\"display: none;\">\n`
+    string += `\t\t\t\t\t\t\t<label class=\"radio-label\" for=\"Q${questionNum}${answerLetter}\">${questionAnswer}</label>\n`
+    string += '\t\t\t\t\t\t</div>\n'
+    return string
 }
 
 
@@ -67,7 +66,7 @@ function generateHTML (modTitle, modNum, modIntroVideoLink, modOverviewFile, mod
     htmlContent += '<head>\n'
 
     // Difference #1
-    htmlContent += '\t<title>' + modTitle + '</title>\n'
+    htmlContent += `\t<title>${modTitle}</title>\n`
 
     // This block below is a constant across all modules
     htmlContent += '\t<meta charset=\"UTF-8\">\n'
@@ -75,7 +74,7 @@ function generateHTML (modTitle, modNum, modIntroVideoLink, modOverviewFile, mod
     htmlContent += '\t<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\">\n'
 
     // Difference #2
-    htmlContent += '\t<link rel=\"stylesheet\" href=\"/src/Modules/stylesheets/module' + modNum + '.css\">\n'
+    htmlContent += `\t<link rel=\"stylesheet\" href=\"/src/Modules/stylesheets/module${modNum}.css\">\n`
 
     // Another block of constants across all modules
     htmlContent += '\t<link rel=\"stylesheet\" href=\"/src/Modules/stylesheets/questions.css\">\n'
@@ -105,7 +104,7 @@ function generateHTML (modTitle, modNum, modIntroVideoLink, modOverviewFile, mod
     htmlContent += '\t\t\t\t<div class=\"containerContent\">\n'
 
     // Difference #1 repeated
-    htmlContent += '\t\t\t\t  <h2 id=\"moduleTitle\">' + modTitle + '</h2>\n'
+    htmlContent += `\t\t\t\t<h2 id=\"moduleTitle\">${modTitle}</h2>\n`
 
     // Another constant block
     htmlContent += '\t\t\t\t  <div style=\"background-color: #444; padding: 10px; border-radius: 4px; border: 2px solid #ddd;\">\n'
@@ -119,7 +118,7 @@ function generateHTML (modTitle, modNum, modIntroVideoLink, modOverviewFile, mod
     htmlContent += '\t\t\t\t\t\t\t\t<iframe style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%;\"\n'
 
     // Difference #3
-    htmlContent += '\t\t\t\t\t\t\t\t\t\tsrc=\"' + modIntroVideoLink + '\"\n'
+    htmlContent += `\t\t\t\t\t\t\t\t\t\tsrc=\"${modIntroVideoLink}\"\n`
 
     // another constant block
     htmlContent += '\t\t\t\t\t\t\t\t\t\tframeborder=\"0\"\n'
@@ -131,7 +130,7 @@ function generateHTML (modTitle, modNum, modIntroVideoLink, modOverviewFile, mod
     htmlContent += '\t\t\t\t\t\t\t<div style=\"font-size: 18px; font-weight: normal; color: rgb(255, 215, 0); font-style: normal; text-decoration: underline;\">\n'
 
     // Difference #4 (modTitle - "Module X:" + "Overview")
-    htmlContent += '\t\t\t\t\t\t\t\t' + modTitle.split(":")[1].trimEnd() + "Overview:</a>\n"
+    htmlContent += `\t\t\t\t\t\t\t\t${modTitle.split(":")[1].trimEnd()} Overview:</a>\n`
 
     // Another block on constants
     htmlContent += '\t\t\t\t\t\t\t</div>\n'
@@ -144,12 +143,12 @@ function generateHTML (modTitle, modNum, modIntroVideoLink, modOverviewFile, mod
     filepath = process.cwd() + relativePath
 
     try {
-        let lines = readLineByLine(path.join(filepath, modOverviewFile));
+        let lines = readLineByLine(path.join(filepath, modOverviewFile))
         lines.forEach((line) => {
             htmlContent += `\t\t\t\t\t\t\t\t${line}`
         })
     } catch (err) {
-        console.error('Error reading file:', err);
+        console.error('Error reading file:', err)
     }
 
     // another constant block
@@ -164,13 +163,13 @@ function generateHTML (modTitle, modNum, modIntroVideoLink, modOverviewFile, mod
 
     // Difference #6
     try {
-        let lines = readLineByLine(path.join(filepath, modVulnerabilityFile));
+        let lines = readLineByLine(path.join(filepath, modVulnerabilityFile))
         lines.forEach((line) => {
             htmlContent += `\t\t\t\t\t\t\t\t${line}`
         })
 
     } catch (err) {
-        console.error('Error reading file:', err);
+        console.error('Error reading file:', err)
     }
 
     // more constants across modules
@@ -194,12 +193,16 @@ function generateHTML (modTitle, modNum, modIntroVideoLink, modOverviewFile, mod
 
     // Difference #7
     try {
-        let lines = readLineByLine(path.join(filepath, modTermDescFile));
+        let lines = readLineByLine(path.join(filepath, modTermDescFile))
         lines.forEach((line) => {
-            htmlContent += `\t\t\t\t\t\t\t\t${line}`
+            if (line.includes('<li>')) {
+               htmlContent += `\t\t\t\t\t\t\t\t\t${line}`
+            } else {
+               htmlContent += `\t\t\t\t\t\t\t\t${line}`
+            }
         })
     } catch (err) {
-        console.error('Error reading file:', err);
+        console.error('Error reading file:', err)
     }
     
 
@@ -250,7 +253,7 @@ function generateHTML (modTitle, modNum, modIntroVideoLink, modOverviewFile, mod
             }
         })
     } catch (err) {
-        console.error('Error reading file:', err);
+        console.error('Error reading file:', err)
     }
 
     // more constants across modules
