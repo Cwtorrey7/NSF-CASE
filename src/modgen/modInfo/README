@@ -1,0 +1,42 @@
+This directory will store .txt files containing the written, and properly formatted, text for the possibly multilined sections found within the module html files.
+
+For the terminal description files, html elements are allowed. With this in mind both text files and properly formatted html files would be allowed. But keep in mind that all information within the file will be directly written into the module's completed html file.
+
+For the questions files, the formating is simply that prompts must end with a question mark, and that answers begin with a), b), c), and d), respectively. There can be any number of questions following this formating. Currently, more than 4 answer questions are not permitted and neither are questions besides multiple choice questions.
+
+
+Examples:
+
+WannaCry_Overview.txt is a text file contating the overview information found
+on lines 53-62 within the hardcoded module1.html. Within the html file this
+text appears as follows:
+
+<div class="moduleSection">
+    <div style="font-size: 16px; font-weight: normal; color: white; font-style: normal; font-style: normal;">
+        In May of 2017, the ransomware worm known as WannaCry infected numerous
+        organizations, causing significant damage. Over 200,000 systems were infected across
+        150 countries, with damages in the hundreds of millions of dollars. Prominent victims of
+        WannaCry included Boeing, Honda, the NHS of England and Scotland, and the
+        University of Montreal. The ransomware demanded a $300 Bitcoin payment in
+        exchange for the decryption of the victim's files, with the amount increasing over time if
+        left unpaid. On the same day of WannaCry's release, a hardcoded kill switch was
+        discovered and promptly registered by a security researcher. While this did not help
+        systems already infected, it effectively halted further spread of WannaCry within a
+        matter of hours.
+    </div>
+</div>
+
+Continuing, the contents of WannaCry_Overview.txt appears as follows:
+
+In May of 2017, the ransomware worm known as WannaCry infected numerous
+organizations, causing significant damage. Over 200,000 systems were infected across
+150 countries, with damages in the hundreds of millions of dollars. Prominent victims of
+WannaCry included Boeing, Honda, the NHS of England and Scotland, and the
+University of Montreal. The ransomware demanded a $300 Bitcoin payment in
+exchange for the decryption of the victim's files, with the amount increasing over time if
+left unpaid. On the same day of WannaCry's release, a hardcoded kill switch was
+discovered and promptly registered by a security researcher. While this did not help
+systems already infected, it effectively halted further spread of WannaCry within a
+matter of hours.
+
+(Note that minor formatting errors are present due to README's auto-wrapping of text after ~86 cols are used.)

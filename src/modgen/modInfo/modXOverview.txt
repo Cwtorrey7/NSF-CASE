@@ -1,0 +1,10 @@
+In May of 2017, the ransomware worm known as WannaCry infected numerous
+organizations, causing significant damage. Over 200,000 systems were infected across
+150 countries, with damages in the hundreds of millions of dollars. Prominent victims of
+WannaCry included Boeing, Honda, the NHS of England and Scotland, and the
+University of Montreal. The ransomware demanded a $300 Bitcoin payment in
+exchange for the decryption of the victim's files, with the amount increasing over time if
+left unpaid. On the same day of WannaCry's release, a hardcoded kill switch was
+discovered and promptly registered by a security researcher. While this did not help
+systems already infected, it effectively halted further spread of WannaCry within a
+matter of hours.
