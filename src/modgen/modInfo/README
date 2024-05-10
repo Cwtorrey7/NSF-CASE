@@ -1,4 +1,5 @@
 This directory will store .txt files containing the written, and properly formatted, text for the possibly multilined sections found within the module html files.
+  These .txt files must be named "mod{moduleNumber}_{fileType}.txt". For example: "mod1_Overview.txt", "mod1_Questions.txt", "mod1_TermDesc.txt", and "mod1_Vulnerability.txt"
 
 For the terminal description files, html elements are allowed. With this in mind both text files and properly formatted html files would be allowed. But keep in mind that all information within the file will be directly written into the module's completed html file.
 

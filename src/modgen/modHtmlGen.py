@@ -24,7 +24,7 @@ def modHtmlGen(modTitle, modNum, modIntroVideoLink, modOverviewFile, modVulnerab
 
     # Python likes absolute paths... so this is a proxy to create a relative path for opening the moduleX.html
     cwd = os.getcwd()
-    relative = "\\src\\modgen\\" # cwd should put us at simply ""...\NSF_CASE" (when the script is ran from terminal), so we need to adjust to our desired directory from there
+    relative = "/src/modgen/" # cwd should put us at simply ""...\NSF_CASE" (when the script is ran from terminal), so we need to adjust to our desired directory from there
     filePath = cwd + relative # Simply join cwd and relative to create the absolute path to the directory we want the file created in
 
     global f # Made global for helper methods
@@ -118,7 +118,7 @@ def modHtmlGen(modTitle, modNum, modIntroVideoLink, modOverviewFile, modVulnerab
     
     # Must find the text files location first. Will use a process very similar to
     #   how we found the locaiton to create the html file in the begining
-    relative = "\\src\\modgen\\modInfo\\" # Keep in mind cwd will put as at ".../NSF-CASE/"
+    relative = "/src/modgen/modInfo/" # Keep in mind cwd will put as at ".../NSF-CASE/"
     filePath = cwd + relative # Simply join cwd and relative to create the absolute path to the directory we want to read the overview text from
 
     tempFile = open(f"{filePath}{modOverviewFile}", "r", encoding="utf8") # Open the text file specified by modOverviewFile for reading

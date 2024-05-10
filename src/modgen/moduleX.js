@@ -66,7 +66,7 @@ function initTerminal() {
 				}
 				break;
 			default:
-				if (e >= String.fromCharCode(0x20) && e <= String.fromCharCode(0x7E) || e >= ' ') {
+				if (e >= String.fromCharCode(0x20) && e <= String.fromCharCode(0x7E) || e >= 'Â ') {
 					command += e;
 					term.write(e);
 				}
