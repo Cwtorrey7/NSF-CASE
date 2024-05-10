@@ -16,7 +16,7 @@
 """
 import os
 
-def modgen(modTitle, modNum, modIntroVideoLink, modOverviewFile, modVulnerabilityFile, modTermDescFile, modQuestionsFile):
+def modHtmlGen(modTitle, modNum, modIntroVideoLink, modOverviewFile, modVulnerabilityFile, modTermDescFile, modQuestionsFile):
     #print(f"I recieved the modTitle value: {modTitle}")
     #print(f"I recieve the modNum value: {modNum}")
     #print(f"I recieve the modIntroVideoLink value: {modIntroVideoLink}")
@@ -288,4 +288,4 @@ def printAnswerHelper(questionNum, answerLetter, questionAnswer):
     f.write("\t\t\t\t\t\t</div>\n")
 
 
-modgen("Module 1: Wannacry", "1", "https://www.youtube.com/embed/qPzOg0MqrJE", "WannaCry_Overview.txt", "WannaCry_Vulnerability.txt", "WannaCry_TermDesc.txt", "WannaCry_Questions.txt")
+# modHtmlGen("Module 1: Wannacry", "1", "https://www.youtube.com/embed/qPzOg0MqrJE", "WannaCry_Overview.txt", "WannaCry_Vulnerability.txt", "WannaCry_TermDesc.txt", "WannaCry_Questions.txt")

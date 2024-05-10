@@ -310,4 +310,4 @@ function generateHTML (modTitle, modNum, modIntroVideoLink, modOverviewFile, mod
     return htmlContent
 }
 
-modgen("Module 1: Wannacry", "1", "https://www.youtube.com/embed/qPzOg0MqrJE", "WannaCry_Overview.txt", "WannaCry_Vulnerability.txt", "WannaCry_TermDesc.txt", "WannaCry_Questions.txt")
+// modgen("Module 1: Wannacry", "1", "https://www.youtube.com/embed/qPzOg0MqrJE", "WannaCry_Overview.txt", "WannaCry_Vulnerability.txt", "WannaCry_TermDesc.txt", "WannaCry_Questions.txt")
