@@ -275,7 +275,6 @@ def modgen(modTitle, modNum, modIntroVideoLink, modOverviewFile, modVulnerabilit
     f.write("</body>\n")
 
     # --- End of module's <body> block --- #
-
     f.write("</html>")
 
     # --- End of module's Confetti (and custom .js) block --- #
